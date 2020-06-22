@@ -20,6 +20,11 @@ const liveView = document.getElementById("liveView");
 const demosSection = document.getElementById("demos");
 const enableWebcamButton = document.getElementById("webcamButton");
 
+const userLang = navigator.language || navigator.userLanguage;
+console.log(window.location.href);
+if (userLang.includes("es") && !window.location.href.includes("index-es"))
+  window.location.href = "/index-es.html";
+
 // Check if webcam access is supported.
 function getUserMediaSupported() {
   return !!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
